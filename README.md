@@ -14,3 +14,6 @@ use/collaborate/run on your project.
 ## Git
 ### Common Commands
 - `git init` - initialize git repo
+- `git add <filename>`
+- `git commit -m "some descriptive message`
+- `git log` - show all commits
