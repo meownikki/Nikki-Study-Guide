@@ -7066,27 +7066,52 @@ const books = [
 // ```
 
 
+// function getMostCommonGenre(books) {
+//   const dictionary = {};
+//   const arrayOfGenreCount = [];
+
+//   books.forEach(book => {
+//     if (dictionary[book.genre]) {
+//       dictionary[book.genre] += 1
+
+//     } else {
+//       dictionary[book.genre] = 1
+//     }
+//   });
+
+//   for (const [key, value] of Object.entries(dictionary)) {
+//     arrayOfGenreCount.push(
+//       {
+//         name: key,
+//         count: value
+//       });
+//   }
+//   arrayOfGenreCount.sort((a, b) => b.count - a.count);
+//   console.log(arrayOfGenreCount.slice(0, 5));
+// }
+
+
 function getMostCommonGenre(books) {
-  const dictionary = {};
-  const arrayOfGenreCount = [];
+  let count = 0;
+  console.log(books);
+  const genreCount = Object.entries(books.reduce(
+    (acc, { genre }) => {
+      if (count < 0) {
+        console.log("start ---------------------------------")
+        console.log(acc);
+        console.log("finished ---------------------------------")
+        count++;
+      }
+      return (acc[genre] = (acc[genre] || 0) + 1, acc)
+    },
+    {}));
 
-  books.forEach(book => {
-    if (dictionary[book.genre]) {
-      dictionary[book.genre] += 1
+  const topGenres = genreCount
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([name, count]) => ({ name, count }));
 
-    } else {
-      dictionary[book.genre] = 1
-    }
-  });
-
-  for (const [key, value] of Object.entries(dictionary)) {
-    arrayOfGenreCount.push(
-      {
-        name: key,
-        count: value
-      });
-  }
-  console.log(arrayOfGenreCount);
+  // console.log(topGenres);
 }
 
 getMostCommonGenre(books);
