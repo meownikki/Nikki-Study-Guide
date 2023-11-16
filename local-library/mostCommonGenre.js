@@ -7076,11 +7076,10 @@ function getMostCommonGenre(books) {
   // { name: "Nonfiction", count: 9 }
 
   books.forEach(book => {
-    if (dictionary[book.name]) {
+    if (dictionary[book.genre]) {
       dictionary[book.genre] += 1
 
     } else {
-      dictionary['name'] = book.name;
       dictionary[book.genre] = 1
     }
   });
