@@ -7067,13 +7067,8 @@ const books = [
 
 
 function getMostCommonGenre(books) {
-  // I want to go through each book
-  // I want to tally up the margins for each book
-  // Maybe create some kind of dictionary that has the
-  // Key for the genre name and how many times that genre is present
-
   const dictionary = {};
-  // { name: "Nonfiction", count: 9 }
+  const arrayOfGenreCount = [];
 
   books.forEach(book => {
     if (dictionary[book.genre]) {
@@ -7084,7 +7079,14 @@ function getMostCommonGenre(books) {
     }
   });
 
-  console.log(dictionary);
+  for (const [key, value] of Object.entries(dictionary)) {
+    arrayOfGenreCount.push(
+      {
+        name: key,
+        count: value
+      });
+  }
+  console.log(arrayOfGenreCount);
 }
 
 getMostCommonGenre(books);
