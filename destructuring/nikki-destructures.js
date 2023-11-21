@@ -4,9 +4,10 @@ let hiking = {
   hikingShoes: "hiking boots",
   gear: ["poncho", "knife", "jacket", "base layer", "kindling"],
   user: {
-    name: "Nikki",
-    exp: 100
-  }
+        name: "Nikki",
+        exp: 100
+        }
+
 }
 
 // console.log(hiking.weather);
