@@ -2,7 +2,7 @@ let hiking = {
   weather: "Snowy",
   location: "City Park",
   hikingShoes: "hiking boots",
-  gear: ["jacket", "base layer", "kindling"],
+  gear: ["poncho", "knife", "jacket", "base layer", "kindling"],
   user: {
     name: "Nikki",
     exp: 100
